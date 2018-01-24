@@ -3,7 +3,7 @@ require 'pry' # Ruby REPL
 require 'rb-readline' # Ruby IRB
 require 'awesome_print' # Console output
 # require_relative 'credentials' # Pulls in login credentials from credentials.rb
-require 'headless'
+# require 'headless'
 
 puts "hello"
 # username = $username
@@ -14,13 +14,9 @@ like_counter = 0
 num_of_rounds = 0
 MAX_LIKES = 1500
 
-headless = Headless.new
-headless.start
-
-puts "headless"
-
 # Open Browser, Navigate to Login page
-browser = Watir::Browser.start "instagram.com/accounts/login/"
+browser = Watir::Browser.new :chrome, headless: true
+browser.goto "instagram.com/accounts/login/"
 
 # Navigate to Username and Password fields, inject info
 puts "Logging in..."
