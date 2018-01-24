@@ -2,7 +2,7 @@ require 'watir' # Crawler
 require 'pry' # Ruby REPL
 require 'rb-readline' # Ruby IRB
 require 'awesome_print' # Console output
-# require_relative 'credentials' # Pulls in login credentials from credentials.rb
+require_relative 'credentials' # Pulls in login credentials from credentials.rb
 # require 'headless'
 
 puts "hello"
