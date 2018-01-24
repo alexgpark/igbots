@@ -2,10 +2,12 @@ require 'watir' # Crawler
 require 'pry' # Ruby REPL
 require 'rb-readline' # Ruby IRB
 require 'awesome_print' # Console output
-require_relative 'credentials' # Pulls in login credentials from credentials.rb
+# require_relative 'credentials' # Pulls in login credentials from credentials.rb
 
-username = $username
-password = $password
+# username = $username
+# password = $password
+$username = "cryptospotlight"
+$password = "Alex91$$+cryptogram"
 like_counter = 0
 num_of_rounds = 0
 MAX_LIKES = 1500
@@ -22,7 +24,7 @@ browser.text_field(:name => "password").set "#{password}"
 # Click Login Button
 browser.button(:class => '_qv64e _gexxb _4tgw8 _njrw0').click
 sleep(2)
-puts "We're in #DatCrawlLifeDoe"
+puts "GROWBOT COMMENCING"
 
 # Continuous loop to break upon reaching the max likes
 loop do
@@ -41,16 +43,13 @@ loop do
     ap "Scrolling down"
     browser.driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
   end
+  
   num_of_rounds += 1
   ap "number of rounds #{num_of_rounds}"
-  sleep(10)
-
-  # puts "--------- #{like_counter / num_of_rounds} likes per round (on average) ----------"
-  # browser.driver.execute_script("window.scrollBy(0,document.body.scrollHeight)")
   break if like_counter >= MAX_LIKES
-  # sleep(5) # Return to top of loop after this many seconds to check for new photos
+  sleep(2) # Return to top of loop after this many seconds to check for new photos
 end
 
 # Leave this in to use the REPL at end of program
 # Otherwise, take it out and program will just end
-Pry.start(binding)
+# Pry.start(binding)
