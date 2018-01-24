@@ -6,8 +6,8 @@ require 'awesome_print' # Console output
 
 # username = $username
 # password = $password
-$username = "cryptospotlight"
-$password = "Alex91$$+cryptogram"
+username = "cryptospotlight"
+password = "Alex91$$+cryptogram"
 like_counter = 0
 num_of_rounds = 0
 MAX_LIKES = 1500
